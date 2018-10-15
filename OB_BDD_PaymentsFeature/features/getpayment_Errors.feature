@@ -1,3 +1,4 @@
+@PaymentsError
 Feature: Payments Error Scenarios
 
     #1

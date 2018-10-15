@@ -1,3 +1,4 @@
+@PaymentSubmissionsSuccess
 Feature: PaymentSubmissions Success Scenarios
 
     #1

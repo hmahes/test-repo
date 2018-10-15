@@ -1,3 +1,4 @@
+@PaymentSubmissionsError
 Feature: PaymentSubmissions Error Scenarios
 
     #1

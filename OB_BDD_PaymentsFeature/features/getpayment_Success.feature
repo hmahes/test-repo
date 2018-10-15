@@ -1,3 +1,4 @@
+@PaymentsSuccess
 Feature: Payments Success Scenarios
 
     #1

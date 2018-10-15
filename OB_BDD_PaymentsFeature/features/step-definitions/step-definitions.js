@@ -39,4 +39,3 @@ Then('it should have the field {string} containing the value {string}', function
 Then('I should get a response field {string} containing the value {string}', function (attributes_ps, expectedValue_ps) {
     return this.resContent_ps(attributes_ps, expectedValue_ps);
 });
-
