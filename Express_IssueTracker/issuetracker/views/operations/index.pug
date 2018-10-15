@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  .container.pt-1
+    .row
+      .col.text-center
+        .jumbotron
+          h1.text-primary My Issue Tracker
+          p.lead View Issues
+
+        if error
+          h3.text-danger= error
+
+        table.table
+          tr
+            th Issue No.
+            th Description
+            th Severity
+            th Status
+            th Created Date
+            th Resolved Date
+            th Options
+          each post in issues
+            tr
+              td #{post.id}
+              td #{post.description}
+              td #{post.severity}
+              td #{post.status}
+              td #{post.createddate}
+              td #{post.resolveddate}
+              td 
+                a.btn.btn-primary.btn-info(href='/issue/update/'+post.id) &#9998;
+                a.btn.btn-primary.btn-info(href='/issue/delete/'+post.id) &#x274c;      
+        p
+        #menu
+          a.btn.btn-primary.btn-info(href='/issue/add',type='button') Add Issue          

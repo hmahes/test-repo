@@ -1,0 +1,708 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Payments Error Scenarios",
+    "line": 1,
+    "id": "payments-error-scenarios",
+    "tags": [],
+    "uri": "features\\getpayment_Errors.feature",
+    "elements": [
+      {
+        "id": "payments-error-scenarios;when-a-member-opts-for-payment-initiation,-the-scenario-will-validate-that-the-user-should-not-be-able-to-retrieve-payment-details-if-invalid-authentication-details-are-provided",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "When a member opts for Payment Initiation, the scenario will validate that the user should not be able to retrieve payment details if invalid Authentication details are provided",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I set the invalid Authentication details",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I make a GET request to Payment \"payments/bbbUB4\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "I should get a response error status code as 401 \"Unauthorized\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "payments-error-scenarios;when-a-member-opts-for-payment-initiation,-the-scenario-will-validate-that-the-user-should-not-be-able-to-retrieve-payment-details-if-no-payment-id-is-provided",
+        "keyword": "Scenario",
+        "line": 19,
+        "name": "When a member opts for Payment Initiation, the scenario will validate that the user should not be able to retrieve payment details if no payment id is provided",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 14,
+            "name": "I set the Authentication details",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:3"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "I make a GET request to Payment \"payments/\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:15"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "I should get a response error status code as 500 \"Internal Server Error\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:27"
+            },
+            "result": {
+              "status": "passed"
+            }
+          }
+        ]
+      },
+      {
+        "id": "payments-error-scenarios;when-a-member-opts-for-payment-initiation,-the-scenario-will-validate-that-the-user-should-not-be-able-to-retrieve-payment-details-if-invalid-payment-id-is-provided",
+        "keyword": "Scenario",
+        "line": 28,
+        "name": "When a member opts for Payment Initiation, the scenario will validate that the user should not be able to retrieve payment details if invalid payment id is provided",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 23,
+            "name": "I set the Authentication details",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:3"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 24,
+            "name": "I make a GET request to Payment \"pay/ABC111\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:15"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 25,
+            "name": "I should get a response error status code as 400 \"Bad Request\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:27"
+            },
+            "result": {
+              "status": "passed"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "keyword": "Feature",
+    "name": "Payments Success Scenarios",
+    "line": 1,
+    "id": "payments-success-scenarios",
+    "tags": [],
+    "uri": "features\\getpayment_Success.feature",
+    "elements": [
+      {
+        "id": "payments-success-scenarios;when-a-member-opts-for-payment-initiation,-he-should-be-able-to-retrieve-the-payment-details",
+        "keyword": "Scenario",
+        "line": 21,
+        "name": "When a member opts for Payment Initiation, he should be able to retrieve the payment details",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I set the Authentication details",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:3"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I make a GET request to Payment \"payments/ABC123\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "I should get a response status code as 200 \"OK\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "it should have the field \"PaymentId\" containing the value \"ABC123\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "it should have the field \"Status\" containing the value \"AcceptedTechnicalValidation\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "it should have the field \"InstructionIdentification\" containing the value \"ACME412\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "it should have the field \"EndToEndIdentification\" containing the value \"FRESCO.21302.GFX.20\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "it should have the field \"Amount\" containing the value \"140.70\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "it should have the field \"Currency\" containing the value \"GBP\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "it should have the field \"SchemeName\" containing the value \"SortCodeAccountNumber\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "it should have the field \"Identification\" containing the value \"123422290\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "it should have the field \"Name\" containing the value \"Alice\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:35"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "it should have the field \"Self\" containing the value \"/open-banking/v1.1/payments/ABC123\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:35"
+            },
+            "result": {
+              "status": "passed"
+            }
+          }
+        ]
+      },
+      {
+        "id": "payments-success-scenarios;when-a-member-opts-for-payment-initiation,-he-should-be-able-to-retrieve-the-payment-details-and-the-interaction-id",
+        "keyword": "Scenario",
+        "line": 31,
+        "name": "When a member opts for Payment Initiation, he should be able to retrieve the payment details and the interaction Id",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 25,
+            "name": "I set the Authentication details and the Interaction Id",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 26,
+            "name": "I make a GET request to Payment \"payments/XYZ456\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:15"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 27,
+            "name": "I should get a response status code as 200 \"OK\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:23"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "I should get a response interaction id as \"bbbUB4fPI\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:31"
+            },
+            "result": {
+              "status": "passed"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "keyword": "Feature",
+    "name": "PaymentSubmissions Error Scenarios",
+    "line": 1,
+    "id": "paymentsubmissions-error-scenarios",
+    "tags": [],
+    "uri": "features\\getpaysubmission_Errors.feature",
+    "elements": [
+      {
+        "id": "paymentsubmissions-error-scenarios;when-a-member-opts-for-payment-submission,-the-scenario-will-validate-that-the-user-should-not-be-able-to-retrieve-payment-submission-details-if-invalid-authentication-details-are-provided",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "When a member opts for Payment Submission, the scenario will validate that the user should not be able to retrieve payment submission details if invalid Authentication details are provided",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I set the invalid Authentication details",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:11"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I make a GET request to Payment Submission \"payment-submissions/ABC111\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:19"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "I should get a response error status code as 401 \"Unauthorized\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:27"
+            },
+            "result": {
+              "status": "passed"
+            }
+          }
+        ]
+      },
+      {
+        "id": "paymentsubmissions-error-scenarios;when-a-member-opts-for-payment-submission,-the-scenario-will-validate-that-the-user-should-not-be-able-to-retrieve-payment-submission-details-if-no-payment-submission-id-is-provided",
+        "keyword": "Scenario",
+        "line": 19,
+        "name": "When a member opts for Payment Submission, the scenario will validate that the user should not be able to retrieve payment submission details if no payment-submission-id is provided",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 14,
+            "name": "I set the Authentication details",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:3"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "I make a GET request to Payment Submission \"payment-submissions/\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:19"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "I should get a response error status code as 500 \"Internal Server Error\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:27"
+            },
+            "result": {
+              "status": "passed"
+            }
+          }
+        ]
+      },
+      {
+        "id": "paymentsubmissions-error-scenarios;when-a-member-opts-for-payment-submission,-the-scenario-will-validate-that-the-user-should-not-be-able-to-retrieve-payment-submission-details-if-invalid-payment-submission-id-is-provided",
+        "keyword": "Scenario",
+        "line": 28,
+        "name": "When a member opts for Payment Submission, the scenario will validate that the user should not be able to retrieve payment submission details if invalid payment-submission-id is provided",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 23,
+            "name": "I set the Authentication details",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:3"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 24,
+            "name": "I make a GET request to Payment Submission \"pay/ABC111\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:19"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 25,
+            "name": "I should get a response error status code as 400 \"Bad Request\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:27"
+            },
+            "result": {
+              "status": "passed"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "keyword": "Feature",
+    "name": "PaymentSubmissions Success Scenarios",
+    "line": 1,
+    "id": "paymentsubmissions-success-scenarios",
+    "tags": [],
+    "uri": "features\\getpaysubmission_Success.feature",
+    "elements": [
+      {
+        "id": "paymentsubmissions-success-scenarios;when-a-member-opts-for-payment-submission,-he-should-be-able-to-retrieve-the-payment-submission-details",
+        "keyword": "Scenario",
+        "line": 15,
+        "name": "When a member opts for Payment Submission, he should be able to retrieve the payment submission details",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I set the Authentication details",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:3"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I make a GET request to Payment Submission \"payment-submissions/ABC111\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:19"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "I should get a response status code as 200 \"OK\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:23"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I should get a response field \"PaymentSubmissionId\" containing the value \"ABC111\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I should get a response field \"PaymentId\" containing the value \"true\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:39"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "I should get a response field \"Status\" containing the value \"AcceptedSettlementCompleted\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:39"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "I should get a response field \"Self\" containing the value \"/open-banking/v1.1/payment-submissions/ABC111\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:39"
+            },
+            "result": {
+              "status": "passed"
+            }
+          }
+        ]
+      },
+      {
+        "id": "paymentsubmissions-success-scenarios;when-a-member-opts-for-payment-submission,-he-should-be-able-to-retrieve-the-payment-submission-details-and-the-interaction-id",
+        "keyword": "Scenario",
+        "line": 25,
+        "name": "When a member opts for Payment Submission, he should be able to retrieve the payment submission details and the interaction Id",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 19,
+            "name": "I set the Authentication details and the Interaction Id",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 20,
+            "name": "I make a GET request to Payment Submission \"payment-submissions/ABC123\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:19"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "I should get a response status code as 200 \"OK\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:23"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "I should get a response interaction id as \"bbbUB4fPI\"",
+            "match": {
+              "location": "features\\step-definitions\\step-definitions.js:31"
+            },
+            "result": {
+              "status": "passed"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

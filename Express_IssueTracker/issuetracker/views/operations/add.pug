@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  .container.pt-1
+    .row
+      .col.text-center
+        .jumbotron
+          h1.text-primary Create new Issue 
+
+        if error
+          h3.text-danger= error
+
+        .add-issue
+          .card.card-body
+            form(id='add', method='post', action='/issue/add')
+              .form-group
+                .row
+                  .col-2.text-right
+                    label.mt-2(for='description') Description:
+                  .col-8
+                    input.form-control#title(name='description' placeholder='Add Description')
+              .form-group
+                .row
+                  .col-2.text-right
+                    label.mt-2(for='severity') Severity:
+                  .col-8
+                    select#sev.form-control(name='severity')
+                      option Minor
+                      option Major
+                      option Critical
+              .form-group
+                .row
+                  .col
+                    button.btn.btn-primary(type='submit') Submit

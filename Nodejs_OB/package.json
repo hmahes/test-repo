@@ -1,0 +1,19 @@
+{
+  "name": "payments-bdd-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cucumber": "^5.0.2",
+    "cucumber-html-report": "^0.6.5",
+    "log4js": "^3.0.6",
+    "request": "^2.88.0",
+    "uuid-v4": "^0.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "author": "Hima Mohanty",
+  "license": "ISC"
+}
